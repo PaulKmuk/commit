@@ -1,0 +1,53 @@
+:root {
+    color_background: #F0F8EC;
+    color_text: #2E463E;
+    color_primary_1: #4CAF50;
+    color_primary_2: #A5D6A7;
+    color_alert: #FF7043;
+}
+
+.dark_background {
+    -fx-background-color: #4CAF50;
+}
+
+.middle_background {
+    -fx-background-color: #A5D6A7;
+}
+
+.light_background {
+    -fx-background-color: #F0F8EC;
+}
+
+.color_text {
+    -fx-text-fill: #2E463E;
+}
+
+.dashboard_btn {
+    -fx-background-color: #A5D6A7;
+    -fx-border-width: none;
+    -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
+    -fx-text-fill: #2E463E;
+    -fx-cursor: hand;
+    -fx-font-weight: 700;
+}
+
+.dashboard_btn:hover {
+    -fx-background-color: #F0F8EC;
+}
+
+.dashboard_btn_active {
+    -fx-background-color: #F0F8EC;
+}
+
+.tab-header-area {
+    -fx-background-color: #4056ad;
+}
+
+.tab-header-area .tab {
+    -fx-background-color: #A5D6A7;
+}
+
+.tab-header-area .tab:selected {
+    -fx-background-color: #F0F8EC;
+}
