@@ -9,55 +9,76 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@styles/main.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.commit.connection.controllers.DashboardController">
+<VBox prefHeight="630.0" prefWidth="900.0" stylesheets="@styles/main.css" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.commit.connection.controllers.DashboardController">
    <children>
-      <VBox prefHeight="200.0" prefWidth="200.0" styleClass="dark_background">
+      <HBox alignment="CENTER_LEFT" stylesheets="@styles/main.css" VBox.vgrow="ALWAYS">
          <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="200.0" spacing="10.0">
+            <VBox minHeight="100.0" prefWidth="200.0" styleClass="dark_background">
                <children>
-                  <ImageView fitHeight="60.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/logo_commit.png" />
-                     </image>
-                  </ImageView>
-                  <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                  <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Label text="ERPwincash" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label text="COMMIT Polska">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
+                        <ImageView fitHeight="60.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/logo_commit.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="ERPwincash" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="COMMIT Polska">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </HBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding>
+                     <children>
+                        <Button alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="30.0" styleClass="dashboard_btn" text="Zdalny pulpit" textAlignment="RIGHT">
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="30.0" styleClass="dashboard_btn" text="Ustawienia">
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </Button>
                      </children>
                   </VBox>
                </children>
-               <padding>
-                  <Insets left="10.0" right="10.0" />
-               </padding>
-            </HBox>
-            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
-               <padding>
-                  <Insets bottom="20.0" />
-               </padding>
-               <children>
-                  <Button alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="30.0" styleClass="dashboard_btn" text="Zdalny pulpit" textAlignment="RIGHT">
-                     <padding>
-                        <Insets left="30.0" />
-                     </padding>
-                  </Button>
-                  <Button alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="30.0" styleClass="dashboard_btn" text="Ustawienia">
-                     <padding>
-                        <Insets left="30.0" />
-                     </padding>
-                  </Button>
-               </children>
             </VBox>
+            <VBox fx:id="dashboard_content" minHeight="100.0" prefHeight="200.0" styleClass="light_background" HBox.hgrow="ALWAYS" />
          </children>
-      </VBox>
-      <VBox fx:id="dashboard_content" HBox.hgrow="ALWAYS" />
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="200.0" spacing="10.0" styleClass="dark_background" VBox.vgrow="NEVER">
+         <children>
+            <Label text="Użytkownik:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="dashboard_logged_user" text="BRAK" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </HBox>
    </children>
-</HBox>
+</VBox>

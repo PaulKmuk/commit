@@ -2,7 +2,8 @@ module pl.commit.connection {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
-    requires com.oracle.database.jdbc;
+    requires ojdbc6;
+//    requires com.oracle.database.jdbc;
 
 
     opens pl.commit.connection to javafx.fxml;

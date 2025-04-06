@@ -2,6 +2,8 @@ package pl.commit.connection.pages;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
 import pl.commit.connection.ConnectionApplication;
 

@@ -38,6 +38,7 @@
 
 .dashboard_btn_active {
     -fx-background-color: #F0F8EC;
+    -fx-font-weight: 700;
 }
 
 .tab-header-area {
@@ -50,4 +51,53 @@
 
 .tab-header-area .tab:selected {
     -fx-background-color: #F0F8EC;
+}
+
+.connection_btn {
+    -fx-background-color: #FF7043;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-border-color: #2E463E;
+    -fx-text-fill: #2E463E;
+    -fx-cursor: hand;
+    -fx-font-weight: 700;
+}
+
+.connection_btn:hover {
+    -fx-background-color: #f78a68;
+}
+
+.copy_btn {
+    -fx-background-color: #bae6bc;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-border-color: #2E463E;
+    -fx-text-fill: #2E463E;
+    -fx-cursor: hand;
+    -fx-font-weight: 700;
+}
+
+.copy_btn:hover {
+    -fx-background-color: #F0F8EC;
+}
+
+.connection_frame {
+    -fx-border-width: 1px;
+    -fx-border-radius: 2px;
+    -fx-background-radius: 2px;
+    -fx-border-color: #2E463E;
+}
+
+.titled-pane > .title {
+    -fx-background-color: #A5D6A7;
+    -fx-border-width: 1px;
+    -fx-border-color: #2E463E;
+}
+
+.userOnline {
+    -fx-background-color: #06c906;
+    -fx-text-fill: #fff;
+    -fx-background-radius: 100px;
 }

@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.image.Image?>
@@ -10,11 +11,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="600.0" prefWidth="600.0" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox minHeight="100.0" prefHeight="600.0" prefWidth="600.0" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.commit.connection.controllers.DashboardContentConnectionsController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="0.0" spacing="10.0" styleClass="dark_background" stylesheets="@styles/main.css">
          <children>
-            <Button contentDisplay="TOP" graphicTextGap="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="120.0" styleClass="dashboard_btn" text="Połączenia">
+            <Button fx:id="dashboard_content_connections_btn" contentDisplay="TOP" graphicTextGap="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="120.0" styleClass="dashboard_btn" text="Połączenia">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -23,7 +24,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="120.0" styleClass="dashboard_btn" text="Dodaj połącznie">
+            <Button fx:id="dashboard_content_add_connection_btn" alignment="CENTER" contentDisplay="TOP" graphicTextGap="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="120.0" styleClass="dashboard_btn" text="Dodaj połącznie">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -32,7 +33,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button contentDisplay="TOP" graphicTextGap="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="120.0" styleClass="dashboard_btn" text="Dodaj klienta">
+            <Button fx:id="dashboard_content_add_customer_btn" contentDisplay="TOP" graphicTextGap="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="120.0" styleClass="dashboard_btn" text="Dodaj klienta">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -45,15 +46,42 @@
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding></HBox>
-      <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+      <ScrollPane fx:id="content_add_connections" fitToHeight="true" fitToWidth="true" managed="false" prefHeight="200.0" prefWidth="200.0" visible="false" VBox.vgrow="ALWAYS">
          <content>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Dodaj połączenie " />
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <ScrollPane fx:id="content_connections" fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <content>
+            <VBox fx:id="list_connection" prefHeight="200.0" prefWidth="100.0" spacing="1.0">
                <children>
                   <TitledPane animated="false" text="untitled">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                     </content>
                   </TitledPane>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <ScrollPane fx:id="content_add_customer" fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" visible="false" VBox.vgrow="ALWAYS">
+         <content>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Dodaj klienta " />
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <ScrollPane fx:id="content_edit_connections" fitToHeight="true" fitToWidth="true" layoutX="10.0" layoutY="90.0" managed="false" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <content>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Edydtuj połącznie" />
                </children>
             </VBox>
          </content>

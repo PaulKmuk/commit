@@ -1,5 +1,6 @@
 package pl.commit.connection.dao;
 
+import javafx.scene.control.Label;
 import pl.commit.connection.database.DatabaseConnection;
 import pl.commit.connection.model.Employee;
 
@@ -10,6 +11,26 @@ import java.sql.SQLException;
 import java.util.Optional;
 
 public class EmployeeDAO {
+
+    public static String getUserLoginByGid(int gid){
+        Connection connection = null;
+        connection = DatabaseConnection.getConnection();
+        String sql = "SELECT login FROM employee WHERE gid = ?";
+        System.out.println(sql);
+        System.out.println(gid);
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+            preparedStatement.setInt(1, gid);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if(resultSet.next()){
+                return resultSet.getString("login");
+            } else {
+                return "not found";
+            }
+        } catch (SQLException e) {
+           throw new RuntimeException(e);
+        }
+    }
 
     public Optional<Employee> getEmployeeByLoginAndPassword(String login, String password) {
         Connection connection = null;
